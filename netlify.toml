@@ -1,2 +1,16 @@
 [build]
-  functions = "functions"
+  command = "npm run build" # Comando de build personalizado, se necessário
+  functions = "netlify/functions" # Caminho para a pasta de funções serverless
+
+[dev]
+  command = "npm run start" # Comando para o ambiente de desenvolvimento local
+
+[[redirects]]
+  from = "/*"
+  to = "/view/index.html"
+  status = 200
+
+[[headers]]
+  for = "/functions/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
