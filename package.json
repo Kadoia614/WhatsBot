@@ -7,8 +7,8 @@
     "node": "18.x"
   },
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "netlify dev",
+    "build": "netlify build"
   },
   "author": "Kadoia",
   "license": "ISC",
@@ -22,6 +22,7 @@
     "sequelize": "^6.32.1"
   },
   "devDependencies": {
+    "netlify-cli": "^16.5.1",
     "nodemon": "^2.0.22"
   }
 }
