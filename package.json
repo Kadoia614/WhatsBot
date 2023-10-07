@@ -9,7 +9,7 @@
   "scripts": {
     "teste": "node app.js",
     "start": "netlify dev",
-    "build": "netlify build"
+    "build": "netlify link && netlify build"
   },
   "author": "Kadoia",
   "license": "ISC",
