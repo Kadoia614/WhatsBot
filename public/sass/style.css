@@ -1,0 +1,20 @@
+body header {
+  min-height: 10vh;
+}
+body main {
+  min-height: 80vh;
+}
+body main #login {
+  max-width: 450px;
+  background-color: #eee;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 7px;
+}
+body footer {
+  min-height: 10vh;
+}
+
+/*# sourceMappingURL=style.css.map */
