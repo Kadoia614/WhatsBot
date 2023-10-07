@@ -11,7 +11,6 @@
   },
   "author": "Kadoia",
   "license": "ISC",
-  "private": false,
   "dependencies": {
     "axios": "^1.4.0",
     "body-parser": "^1.20.2",
