@@ -1,5 +1,5 @@
 const sequelize = require('sequelize');
-const db = require('../functions/controllers/db');
+const db = require('../controllers/db');
 
 const User = db.define('wppbot', {
     id: {

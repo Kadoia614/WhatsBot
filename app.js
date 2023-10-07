@@ -1,6 +1,6 @@
 const express = require('express');
-const msgController = require('./functions/controllers/msgController');
-const adminController = require('./functions/controllers/adminController');
+const msgController = require('./controllers/msgController');
+const adminController = require('./controllers/adminController');
 const bodyParser = require('body-parser');
 
 const port = 8080;
