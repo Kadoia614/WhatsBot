@@ -1,0 +1,9 @@
+user.create({ mensagem: mensagemRecebida, type: req.method, usuario: usuario })
+.then(() => {
+    res.status(200).json({ message: 'Registro criado com sucesso!', usuario });
+
+    console.log('Registro criado com sucesso!' + mensagemRecebida);
+}).catch((erro) => {
+    res.status(500).json({ message: 'Ocorreu um erro ao criar o registro.' })
+    console.log(erro);
+})
