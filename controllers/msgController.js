@@ -1,4 +1,4 @@
-const user = require('../models/user');
+// const user = require('../models/user');
 const tratarMsg = require('./modules/tratarMsg');
 const userSessions = {};
 
@@ -8,7 +8,7 @@ exports.getMsg = async (req, res) => {
     const data = req.query;
     const dataTostring = JSON.stringify(data);
 
-    user.create({ mensagem: dataTostring, type: reqType })
+    // user.create({ mensagem: dataTostring, type: reqType })
     try {
         res.send(data['hub.challenge']);
         // res.send("Deu Certo");
@@ -37,7 +37,7 @@ exports.postMsg = async (req, res) => {
         } else {
             // Obter o passo atual da sessão do usuário
             const currentStep = userSessions[usuario].step;
-            responseMessage = processMessage(mensagemRecebida, currentStep);
+            responseMessage = tratarMsg.SelecionarEtapa(mensagemRecebida, currentStep);
 
             userSessions[usuario].step = currentStep + 1
         
@@ -55,23 +55,23 @@ exports.postMsg = async (req, res) => {
 };
 
 
-function processMessage(message, step) {
-    let response;
+// function processMessage(message, step) {
+//     let response;
   
-    switch (step) {
-      case 1:
-        response = 'Ótimo! Qual é o seu nome?';
-        break;
-      case 2:
-        response = `Olá, ${message}! Como posso ajudar você hoje?`;
-        break;
-      case 3:
-        response = 'Estou aqui para responder às suas perguntas. O que você gostaria de saber?';
-        break;
-      default:
-        response = 'Desculpe, não entendi. Por favor, tente novamente.';
-        break;
-    }
+//     switch (step) {
+//       case 1:
+//         response = 'Ótimo! Qual é o seu nome?';
+//         break;
+//       case 2:
+//         response = `Olá, ${message}! Como posso ajudar você hoje?`;
+//         break;
+//       case 3:
+//         response = 'Estou aqui para responder às suas perguntas. O que você gostaria de saber?';
+//         break;
+//       default:
+//         response = 'Desculpe, não entendi. Por favor, tente novamente.';
+//         break;
+//     }
   
-    return response;
-  }
+//     return response;
+//   }

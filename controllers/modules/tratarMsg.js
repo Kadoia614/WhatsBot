@@ -1,4 +1,5 @@
 const axios = require('axios');
+const { response } = require('express');
 
 const wid = "116309021506789";
 const urlApi = "https://graph.facebook.com/v17.0/" + wid + "/messages";
@@ -21,7 +22,7 @@ exports.SelecionarEtapa = (message, step)=>{
           response = 'Desculpe, não entendi. Por favor, tente novamente.';
           break;
       }
-
+      return response;
 }
 
 
