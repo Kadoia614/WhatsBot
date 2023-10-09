@@ -3,7 +3,7 @@ const { response } = require('express');
 
 const wid = "116309021506789";
 const urlApi = "https://graph.facebook.com/v17.0/" + wid + "/messages";
-const authBarrer = "Bearer EAALdi7EPYDUBO9IF3b86pktulYnhvXTS8Shx3RdJB3sF9vd4HFn4K82ZC8XB0P5ZCCXZB0FogjvchYbvHSL3GPUQZAbCSPG0wIy5xZBdSmE3JgYWPw9vPkRBfwYLoPsw5LF8yTxTA6fluOgHovbM8LcigjAqtyLSeuc6rHR5Df54wERCnbCD6w9Ljetf6i66504JWULuZBMolczIVZCTCEZD"
+const authBarrer = "Bearer EAALdi7EPYDUBO3GnQra4ekCad8URMMHgaQgx64ZCtCceKQAIxDPE4jqrg5c3MexJ5FtY6UWGY3a7JwNRU5hZBIkOG4nQveI01ZAFDzvsD980FC4T75RK5BteMZAFPLZB3xtt0slRXwXurkabECQwjxjvo67ZAABhEq5AbSYKNq0ZAZCgo7qdi67MySM2NlmnmSZA2ZANFeezZCHj6aHVGI1WlsZD"
 
 
 exports.SelecionarEtapa = (message, step)=>{
