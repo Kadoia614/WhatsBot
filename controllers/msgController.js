@@ -1,5 +1,6 @@
 // const user = require('../models/user');
 const tratarMsg = require('./modules/tratarMsg');
+const enviarMsg = require('./modules/enviarMsg');
 const userSessions = {};
 
 
@@ -8,18 +9,24 @@ exports.getMsg = async (req, res) => {
     const data = req.query;
     const dataTostring = JSON.stringify(data);
 
+    console.log('A requisição foi do tipo ' + dataTostring)
+
     // user.create({ mensagem: dataTostring, type: reqType })
-    try {
-        res.send(data['hub.challenge']);
-        // res.send("Deu Certo");
-        console.log('A requisição foi do tipo ' + dataTostring)
-    } catch {
-        console.log('algo deu errado')
+    if(data['hub.verify_token'] == 'teste'){
+        console.log('Token correto, retornando o challenge')
+        try {
+            res.status(200).send(data['hub.challenge']);
+            // res.send("Deu Certo");
+        } catch {
+            res.status(404).end();
+            console.log('algo deu errado')
+        }
+    } else {
+        console.log('Token incorreto, favor verificar')
+        res.status(401).end();
+
     }
 }
-
-
-
 
 exports.postMsg = async (req, res) => {
     const { value } = req?.body?.entry[0]?.changes[0]
@@ -43,7 +50,7 @@ exports.postMsg = async (req, res) => {
         
         }
 
-        tratarMsg.Enviar(usuario, responseMessage);
+        enviarMsg.Enviar(usuario, responseMessage);
 
         res.status(200).end();
 
